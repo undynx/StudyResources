@@ -1,0 +1,14 @@
+~ EVENTOS ~ 
+
+Es un estímulo que puede ser provocado de manera 
+automática (por ej. Netflix) o como resultado de una
+interacción del usuario (click, hover)
+
+* En los synthetic events no es necesario 
+"borrar" ese evento, se hace automáticamente
+
+* Los eventos se ejecutan en el elemento y todos
+sus ancestros. evt.stopPropagation() se utilizar
+para definir que el evento suceda _únicamente_ 
+en el componente especificado (por ejemplo, hacer
+click fuera de un modal para que lo cierre)

@@ -1,0 +1,60 @@
+~ PROMISE ~
+
+Una promesa es un objeto que permite representar
+y seguir el ciclo de vida de una tarea (función).
+Sus estados posibles son PENDIN => (FULLFILED || REJECTED)
+
+----------
+
+//Ejemplo de una promise que es siempre resuleta
+
+const task = new Promise((resolve, reject) => {
+    //Tarea sincrónica
+    resolve(true);
+});
+
+//Esto se realizará después de que se complete la tarea
+task.then(result => {
+    console.log(result);
+});
+
+En consola se imprimirá result
+
+----------
+
+//Ejemplo de una promise que es siempre rechazada
+
+const task = new Promise((resolve, reject) => {
+    reject('Mensaje de error');
+});
+
+task.then(result => {
+    console.log('No es error')
+}, err => {
+    console.log('Error:' + err);
+})
+
+En consola se imprimirá Error: Mensaje de error
+
+----------
+
+//Promesa completa
+
+const promise = new Promise ((resolve, reject) => {
+    resolve(arrayEjemplo)
+});
+
+promise.then((result) => {
+    setTimeOut(console.log(result), 3000)
+
+}), catch((err) => {
+    console.log('Hubo un error' + err)
+});
+
+En este caso, la promesa "pide" el arrayEjemplo.
+Después de que se cumple la promesa, se ejecuta el .then
+que espera 3sec para ejecutarse (simulando una llamada
+al backend) y devuelve el array en consola y se resolvió,
+o devuelve "Hubo un error" y el error, si no se resolvió
+
+-> result imprimirá lo que se resuelva en la promise

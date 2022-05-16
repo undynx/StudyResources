@@ -1,0 +1,7 @@
+~ CONTEXT ~
+
+Context se utiliza para manejar datos a través
+de la app sin utilizar props; por ejemplo
+cuando estos datos son necesarios en muchos
+componentes, o cuando es muy difícil pasar 
+la información (muchos hijos intermedios).

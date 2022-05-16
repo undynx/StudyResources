@@ -1,0 +1,11 @@
+-> Por qué al importar por ejemplo el useState
+se hace entre corchetes?
+
+-> Diferencia entre function y arrow function
+
+-> e.preventdefault
+
+-> operador ternario
+
+-> then y catch error?
+

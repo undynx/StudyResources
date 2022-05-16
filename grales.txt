@@ -1,0 +1,21 @@
+?? NULLISH OPERATOR~
+
+Es un operador lógico que devuelve el operando derecho
+si el operando izquierdo es null o undefined, sino,
+devuelve el operador izquierdo
+
+let foo;
+let cambio = foo ?? 'Cambio'
+console.log(cambio)
+
+/* Como boo es undefined, en consola se imprimirá
+"Cambio" */
+
+let boo = 'Sin cambio';
+let noCambio = boo ?? 'Cambio'
+console.log(noCambio)
+
+/* Como foo está definido, en consola se imprimirá
+su valor, es decir "Sin Cambio" */
+
+----------------------------------------------------

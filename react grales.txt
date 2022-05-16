@@ -1,0 +1,15 @@
+CICLO DE VIDA~
+
+//Reglas importantes:
+* No bloquear el rendering con tareas pesadas 
+    y sincrónicas
+* Ejecutar tareas asincrónicas con efectos secundatios
+    luego del montaje (mount)
+
+//Clasificaciones de estados de un ciclo de Vida:
+* MONTAJE se produce la primera vez que un
+    componente va a generarse, incluyéndose en el DOM
+* ACTUALIZACIÓN cuando un componente ya generado
+    se está actualizando
+* DESMONTAJE cuando el componente se elimina del DOM
+

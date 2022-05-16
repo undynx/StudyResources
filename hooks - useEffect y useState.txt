@@ -1,0 +1,72 @@
+~ HOOKS ~
+
+* Deben ejecutarse _siempre_ (por lo que no se pueden
+utilizar en iteraciones como for, if o ternario A ? B : C)
+* Se ejecutan en orden y nunca en simultáneo
+
+---------------------------------------------------
+
+~ STATES ~
+
+function App() {
+    
+    /* definición del estado */
+    const [name, setName] = useState('Primer estado');
+    
+    return(
+        <div onClick={() => setName('Segundo estado')}>
+            Este div cambiará {name} al clickearlo
+        </ div>
+    );
+}
+
+El valor inicial es el definido en useState
+En este caso, al clickear el div, se cambiará el 
+estado de "Primer estado" a "Segundo estado".
+
+* El valor inicial es constante
+    no se puede hacer name = otroname
+* Se cambia con setName
+    setName = otroName
+
+---------------------------------------------------
+
+~ EFFECT ~
+
+El hook de efecto sirve para controlar el ciclo de vida 
+y para mutaciones (props, estado)
+Lo que está dentro del useEffect se renderiza después
+de que se renderice el componente
+
+function App() {
+    
+    useEffect(() => {
+
+        console.log('App montada')
+
+        return() => {
+            console.log('App desmontada')
+        }
+    }, []);
+
+    console.log('App renderizada')
+    return(
+        <div>
+            Hello ReactClass!
+        </div>
+    )
+}
+
+En este ejemplo, en consola se ejecutará
+PRIMERO "App renderizada" 
+y LUEGO "App montada"
+¿Por qué? Porque primero se renderiza todo el
+componente y luego se ejecuta el useEffect
+
+//Filtros 
+
+[] => Se actualiza solo cuando se monta la App
+[prop] => onMount y por cada cambio de prop
+[prop1, prop2] => onMount y por cambio de prop1 y prop2
+undefined => mount y en cada render 
+
